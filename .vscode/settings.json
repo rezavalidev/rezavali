@@ -1,0 +1,8 @@
+{
+  "chat.tools.terminal.autoApprove": {
+    "/^pnpm exec eslint src/app/page\\.tsx$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
+}
