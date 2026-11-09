@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Script from 'next/script'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
@@ -130,12 +130,31 @@ export default function Projects() {
             </div>
 
             <div className="border-border bg-muted/40 border-t p-4 md:border-t-0 md:border-l md:p-6">
-              <div className="relative h-[260px] w-full overflow-hidden rounded-xl border shadow-sm sm:h-[300px] lg:h-[500px]">
-                <Image
-                  src="/images/chainbouncer-screenshot.webp"
-                  alt="ChainBouncer Telegram Mini App Interface"
-                  fill
-                  className="object-cover object-top"
+              <div className="relative w-full overflow-hidden rounded-xl border shadow-sm">
+                <div
+                  className="wave_popover_embed"
+                  data-id="6ni24UDpgsL9uutj"
+                  data-width="360"
+                  data-height="640"
+                >
+                  <div>
+                    <img
+                      src="https://embed.wave.video/6ni24UDpgsL9uutj/preview.jpg?width=1080&height=1920&play=true&color=%2330AEF2"
+                      alt="chainbouncer"
+                      style={{
+                        cursor: 'pointer',
+                        display: 'block',
+                        maxWidth: '100%',
+                        objectFit: 'cover',
+                      }}
+                      data-target="target"
+                    />
+                  </div>
+                </div>
+
+                <Script
+                  src="https://wave.video/embed/popover-embed.js"
+                  strategy="afterInteractive"
                 />
               </div>
             </div>
