@@ -28,6 +28,7 @@ export default function Hero() {
           <div className="flex flex-wrap gap-3">
             <Button
               render={<a href="#contact" />}
+              nativeButton={false}
               size="lg"
               className="rounded-full px-6"
             >
@@ -35,6 +36,7 @@ export default function Hero() {
             </Button>
             <Button
               render={<a href="#projects" />}
+              nativeButton={false}
               variant="secondary"
               size="lg"
               className="rounded-full px-6"

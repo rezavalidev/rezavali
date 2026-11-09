@@ -1,24 +1,24 @@
-import Script from 'next/script'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
   Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import DemoVideo from '@/components/home/DemoVideo'
 
-const chainBouncerFeatures = [
+const chainBouncerHighlights = [
   {
-    title: 'Token Gate',
-    description:
-      'Verifies Native TON and Jetton balances via TON Connect to automate group access based on token holding requirements.',
+    title: 'Native TON & Jettons',
+    description: 'Gate access by TON balance or any Jetton.',
   },
   {
-    title: 'Subscription (Experimental)',
+    title: 'One-time invite links',
+    description: 'Eligible wallets get a single-use link that expires.',
+  },
+  {
+    title: 'Ongoing enforcement',
     description:
-      'A dedicated UI and workflow for subscription-based membership management.',
+      'Scheduled balance checks, a warning, a grace period, then removal.',
   },
 ]
 
@@ -30,6 +30,14 @@ const chainBouncerStack = [
 ]
 
 const nftVoteStack = ['Solidity', 'Next.js', 'Wagmi', 'RainbowKit']
+
+// TODO: Verify these technologies against GuildPass's actual stack.
+const guildPassStack = [
+  'Next.js',
+  'Telegram Mini App',
+  'TON Connect',
+  'PostgreSQL',
+]
 
 export default function Projects() {
   return (
@@ -55,35 +63,36 @@ export default function Projects() {
               <div className="mb-4 flex flex-wrap items-center gap-3">
                 <Badge className="rounded-full">Featured</Badge>
                 <Badge variant="outline" className="rounded-full">
-                  Telegram Bot &amp; Mini App
+                  Telegram Mini App
                 </Badge>
               </div>
 
               <p className="text-muted-foreground text-[11px] font-medium tracking-[0.18em] uppercase">
-                Personal project
+                PERSONAL PROJECT
               </p>
               <h3 className="text-foreground text-2xl font-semibold tracking-tight md:text-3xl">
                 ChainBouncer
               </h3>
 
               <p className="text-muted-foreground mt-4 max-w-xl text-sm leading-7 md:text-base">
-                A Telegram bot and Mini App for managing group access through
-                wallet verification. The Token Gate mode checks native TON or
-                Jetton balances against configurable requirements and automates
-                access management. A separate subscription workflow is available
-                experimentally.
+                A Telegram Mini App for token-gating Telegram groups and
+                channels. It verifies native TON or Jetton balances through TON
+                Connect, issues a one-time invite link to eligible wallets, and
+                keeps checking holders afterwards: members who drop below the
+                requirement get a warning and a grace period before being
+                removed.
               </p>
 
-              <ul className="mt-6 grid gap-4 sm:grid-cols-2">
-                {chainBouncerFeatures.map((feature) => (
+              <ul className="mt-6 grid gap-3 sm:grid-cols-3">
+                {chainBouncerHighlights.map((feature) => (
                   <li
                     key={feature.title}
-                    className="border-border bg-background rounded-xl border p-4"
+                    className="border-border bg-background rounded-xl border p-3"
                   >
-                    <h4 className="text-foreground font-medium">
+                    <h4 className="text-foreground text-sm font-medium">
                       {feature.title}
                     </h4>
-                    <p className="text-muted-foreground mt-2 text-sm leading-6">
+                    <p className="text-muted-foreground mt-2 text-xs leading-5">
                       {feature.description}
                     </p>
                   </li>
@@ -105,6 +114,7 @@ export default function Projects() {
                       href="https://t.me/ChainBouncerBot/app?startapp=h3756zw5ufkszrugnpfqa2el"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Open ChainBouncer Token Gate demo"
                     />
                   }
                   nativeButton={false}
@@ -112,6 +122,54 @@ export default function Projects() {
                 >
                   Demo: Token Gate
                 </Button>
+              </div>
+            </div>
+
+            <div className="border-border bg-muted/40 border-t p-4 md:border-t-0 md:border-l md:p-6">
+              <DemoVideo
+                src="6ni24UDpgsL9uutj"
+                aspect="9/16"
+                title="ChainBouncer"
+              />
+            </div>
+          </div>
+        </Card>
+
+        <Card className="border-border/80 bg-card overflow-hidden border">
+          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2">
+            <div className="p-6 md:p-8">
+              <div className="mb-4 flex flex-wrap items-center gap-3">
+                <Badge variant="outline" className="rounded-full">
+                  Telegram Bot &amp; Mini App
+                </Badge>
+                <Badge variant="outline" className="rounded-full">
+                  Experimental
+                </Badge>
+              </div>
+
+              <p className="text-muted-foreground text-[11px] font-medium tracking-[0.18em] uppercase">
+                PERSONAL PROJECT
+              </p>
+              <h3 className="text-foreground text-2xl font-semibold tracking-tight md:text-3xl">
+                GuildPass
+              </h3>
+
+              <p className="text-muted-foreground mt-4 max-w-xl text-sm leading-7 md:text-base">
+                A Telegram Mini App for paid memberships. It handles recurring
+                subscriptions for access to Telegram groups and channels and
+                gives community owners tools to manage their members. Currently
+                experimental.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {guildPassStack.map((tag) => (
+                  <Badge key={tag} variant="secondary" className="rounded-full">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
                 <Button
                   render={
                     <a
@@ -130,97 +188,75 @@ export default function Projects() {
             </div>
 
             <div className="border-border bg-muted/40 border-t p-4 md:border-t-0 md:border-l md:p-6">
-              <div className="relative w-full overflow-hidden rounded-xl border shadow-sm">
-                <div
-                  className="wave_popover_embed"
-                  data-id="6ni24UDpgsL9uutj"
-                  data-width="360"
-                  data-height="640"
-                >
-                  <div>
-                    <img
-                      src="https://embed.wave.video/6ni24UDpgsL9uutj/preview.jpg?width=1080&height=1920&play=true&color=%2330AEF2"
-                      alt="chainbouncer"
-                      style={{
-                        cursor: 'pointer',
-                        display: 'block',
-                        maxWidth: '100%',
-                        objectFit: 'cover',
-                      }}
-                      data-target="target"
-                    />
-                  </div>
-                </div>
-
-                <Script
-                  src="https://wave.video/embed/popover-embed.js"
-                  strategy="afterInteractive"
-                />
-              </div>
+              <DemoVideo aspect="9/16" title="GuildPass" />
             </div>
           </div>
         </Card>
 
         <Card className="border-border/80 bg-card border">
-          <CardHeader className="gap-3 pb-0">
-            <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2">
+            <div className="p-6 md:p-8">
+              <div className="mb-4 flex flex-wrap items-center gap-3">
+                <Badge variant="outline" className="rounded-full">
+                  Web3 App
+                </Badge>
+              </div>
               <div>
                 <p className="text-muted-foreground text-[11px] font-medium tracking-[0.18em] uppercase">
-                  Personal project
+                  PERSONAL PROJECT
                 </p>
                 <CardTitle className="mt-2 text-xl">NFTVote</CardTitle>
               </div>
-              <Badge variant="outline" className="rounded-full">
-                Web3 App
-              </Badge>
-            </div>
-          </CardHeader>
 
-          <CardContent className="pt-4">
-            <CardDescription className="text-muted-foreground max-w-2xl text-sm leading-7 md:text-base">
-              A decentralized voting application demonstrating EVM wallet
-              connection and smart contract interaction.
-            </CardDescription>
+              <p className="text-muted-foreground mt-4 max-w-2xl text-sm leading-7 md:text-base">
+                A decentralized voting application demonstrating EVM wallet
+                connection and smart contract interaction.
+              </p>
 
-            <div className="mt-5 flex flex-wrap gap-2">
-              {nftVoteStack.map((tag) => (
-                <Badge key={tag} variant="secondary" className="rounded-full">
-                  {tag}
-                </Badge>
-              ))}
+              <div className="mt-5 flex flex-wrap gap-2">
+                {nftVoteStack.map((tag) => (
+                  <Badge key={tag} variant="secondary" className="rounded-full">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Button
+                  render={
+                    <a
+                      href="https://nftvote.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    />
+                  }
+                  nativeButton={false}
+                  variant="outline"
+                  className="rounded-full px-5"
+                >
+                  Live App
+                </Button>
+                <Button
+                  render={
+                    <a
+                      href="https://github.com/rezavalidev/NFTVote"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    />
+                  }
+                  nativeButton={false}
+                  variant="outline"
+                  className="rounded-full px-5"
+                >
+                  GitHub
+                </Button>
+              </div>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button
-                render={
-                  <a
-                    href="https://nftvote.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  />
-                }
-                nativeButton={false}
-                variant="outline"
-                className="rounded-full px-5"
-              >
-                Live App
-              </Button>
-              <Button
-                render={
-                  <a
-                    href="https://github.com/rezavalidev/NFTVote"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  />
-                }
-                nativeButton={false}
-                variant="outline"
-                className="rounded-full px-5"
-              >
-                GitHub
-              </Button>
+            <div className="border-border bg-muted/40 border-t p-4 md:border-t-0 md:border-l md:p-6">
+              <DemoVideo aspect="16/9" title="NFTVote" />
             </div>
-          </CardContent>
+          </div>
         </Card>
       </div>
     </section>
