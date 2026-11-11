@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Script from 'next/script'
 
 declare global {
@@ -25,17 +25,23 @@ export default function WaveVideoPopup({
   title,
 }: WaveVideoPopupProps) {
   const [status, setStatus] = useState<VideoStatus>('loading')
+  const initialized = useRef(false)
   const ready = status === 'ready'
   const preview =
     poster ??
     `https://embed.wave.video/${src}/preview.jpg?width=1080&height=1920&play=true&color=%2330AEF2`
 
   const initializePopup = () => {
+    if (initialized.current) {
+      return
+    }
+
     if (!window.wavePopover) {
       setStatus('error')
       return
     }
 
+    initialized.current = true
     window.wavePopover.init()
     setStatus('ready')
   }
@@ -85,6 +91,7 @@ export default function WaveVideoPopup({
         src="https://wave.video/embed/popover-embed.js"
         strategy="afterInteractive"
         onReady={initializePopup}
+        onLoad={initializePopup}
         onError={() => setStatus('error')}
       />
     </div>
