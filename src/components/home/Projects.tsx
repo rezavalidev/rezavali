@@ -188,7 +188,11 @@ export default function Projects() {
             </div>
 
             <div className="border-border bg-muted/40 border-t p-4 md:border-t-0 md:border-l md:p-6">
-              <DemoVideo aspect="9/16" title="GuildPass" />
+              <DemoVideo
+                src="0cr9LBs5uJB1mObn"
+                aspect="9/16"
+                title="GuildPass"
+              />
             </div>
           </div>
         </Card>
