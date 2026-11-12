@@ -1,9 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import {
-  Card,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardTitle } from '@/components/ui/card'
 import DemoVideo from '@/components/home/DemoVideo'
 
 const chainBouncerHighlights = [
@@ -61,26 +58,27 @@ export default function Projects() {
           <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2">
             <div className="p-6 md:p-8">
               <div className="mb-4 flex flex-wrap items-center gap-3">
-                <Badge className="rounded-full">Featured</Badge>
+                <Badge variant="default" className="rounded-full bg-blue-950">
+                  Featured
+                </Badge>
                 <Badge variant="outline" className="rounded-full">
                   Telegram Mini App
                 </Badge>
               </div>
 
               <p className="text-muted-foreground text-[11px] font-medium tracking-[0.18em] uppercase">
-                PERSONAL PROJECT
+                PRODUCT
               </p>
               <h3 className="text-foreground text-2xl font-semibold tracking-tight md:text-3xl">
                 ChainBouncer
               </h3>
 
               <p className="text-muted-foreground mt-4 max-w-xl text-sm leading-7 md:text-base">
-                A Telegram Mini App for token-gating Telegram groups and
-                channels. It verifies native TON or Jetton balances through TON
-                Connect, issues a one-time invite link to eligible wallets, and
-                keeps checking holders afterwards: members who drop below the
-                requirement get a warning and a grace period before being
-                removed.
+                Automate community moderation and protect your channel or
+                group's exclusivity. ChainBouncer is a white-labeled Telegram
+                Mini App that instantly verifies native TON or Jetton balances,
+                issues secure one-time access links, and automatically removes
+                members who drop below your required holding thresholds.
               </p>
 
               <ul className="mt-6 grid gap-3 sm:grid-cols-3">
@@ -118,6 +116,7 @@ export default function Projects() {
                     />
                   }
                   nativeButton={false}
+                  variant="default"
                   className="rounded-full px-5"
                 >
                   Demo: Token Gate
@@ -142,23 +141,24 @@ export default function Projects() {
                 <Badge variant="outline" className="rounded-full">
                   Telegram Bot &amp; Mini App
                 </Badge>
-                <Badge variant="outline" className="rounded-full">
+                <Badge variant="default" className="rounded-full bg-blue-950">
                   Experimental
                 </Badge>
               </div>
 
               <p className="text-muted-foreground text-[11px] font-medium tracking-[0.18em] uppercase">
-                PERSONAL PROJECT
+                EXPERIMENTAL PROJECT
               </p>
               <h3 className="text-foreground text-2xl font-semibold tracking-tight md:text-3xl">
                 GuildPass
               </h3>
 
               <p className="text-muted-foreground mt-4 max-w-xl text-sm leading-7 md:text-base">
-                A Telegram Mini App for paid memberships. It handles recurring
-                subscriptions for access to Telegram groups and channels and
-                gives community owners tools to manage their members. Currently
-                experimental.
+                Turn your Telegram group or channel into a predictable recurring
+                revenue stream with zero manual administration. GuildPass is a
+                subscription management Mini App that handles automated crypto
+                billing, subscription expiration tracking, and seamless group
+                access, featuring automated revenue splits.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-2">
@@ -173,13 +173,13 @@ export default function Projects() {
                 <Button
                   render={
                     <a
-                      href="https://t.me/ChainBouncerBot/app?startapp=h3756zw5ufkszrugnpfqsfsf"
+                      href="https://t.me/GuildPassBot/app?startapp=rf0adp3ubqqgc82g1tugtvgw"
                       target="_blank"
                       rel="noopener noreferrer"
                     />
                   }
                   nativeButton={false}
-                  variant="outline"
+                  variant="default"
                   className="rounded-full px-5"
                 >
                   Demo: Subscription (Exp)
@@ -197,7 +197,7 @@ export default function Projects() {
           </div>
         </Card>
 
-        <Card className="border-border/80 bg-card border">
+        {/* <Card className="border-border/80 bg-card border">
           <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2">
             <div className="p-6 md:p-8">
               <div className="mb-4 flex flex-wrap items-center gap-3">
@@ -261,7 +261,7 @@ export default function Projects() {
               <DemoVideo aspect="16/9" title="NFTVote" />
             </div>
           </div>
-        </Card>
+        </Card> */}
       </div>
     </section>
   )

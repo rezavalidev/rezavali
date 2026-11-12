@@ -18,8 +18,8 @@ export default function About() {
             </h2>
 
             <p className="text-muted-foreground mt-4 max-w-3xl text-base leading-8">
-              I&apos;m an independent developer focused on Telegram bots and Mini
-              Apps. I build practical applications that connect Telegram
+              I&apos;m an independent developer focused on Telegram bots and
+              Mini Apps. I build practical applications that connect Telegram
               interfaces to APIs, databases, and blockchain services where
               appropriate. My work emphasizes clear implementation, useful
               functionality, and maintainable code.
@@ -29,7 +29,7 @@ export default function About() {
           <div className="mx-auto w-full max-w-[320px] lg:justify-self-end">
             {/* Put the real portrait in public/images and replace this placeholder src. */}
             <Image
-              src="/images/about-placeholder.svg"
+              src="/images/rezavali.webp"
               alt="Portrait of Reza Vali"
               width={320}
               height={400}

@@ -14,8 +14,11 @@ export default function Hero() {
           </Badge>
 
           <div className="space-y-6">
-            <h1 className="text-foreground max-w-xl text-4xl font-semibold tracking-tight md:text-6xl">
-              Telegram Bots &amp; Mini Apps Developer.
+            <h1 className="text-foreground max-w-2xl text-3xl leading-[1.12] font-semibold tracking-tight sm:text-4xl lg:text-[2.75rem]">
+              <span className="block">
+                Monetize &amp; <span className="text-primary">automate</span>
+              </span>
+              <span className="block">your Telegram community.</span>
             </h1>
 
             <p className="text-muted-foreground max-w-lg text-base leading-7 md:text-lg">
@@ -29,6 +32,7 @@ export default function Hero() {
             <Button
               render={<a href="#contact" />}
               nativeButton={false}
+              variant="default"
               size="lg"
               className="rounded-full px-6"
             >
