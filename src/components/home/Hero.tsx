@@ -16,9 +16,9 @@ export default function Hero() {
           <div className="space-y-6">
             <h1 className="text-foreground max-w-2xl text-3xl leading-[1.12] font-semibold tracking-tight sm:text-4xl lg:text-[2.75rem]">
               <span className="block">
-                Monetize &amp; <span className="text-primary">automate</span>
+                Monetize &amp; <span className="text-primary">Automate</span>
               </span>
-              <span className="block">your Telegram community.</span>
+              <span className="block">Your Telegram Community.</span>
             </h1>
 
             <p className="text-muted-foreground max-w-lg text-base leading-7 md:text-lg">
